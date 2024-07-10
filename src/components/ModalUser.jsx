@@ -1,11 +1,16 @@
+import { FiX } from "react-icons/fi";
 import SubmitButton from "../utils/SubmitButton";
 import Button from "../utils/Button";
 
-export default function ModalUser() {
+export default function ModalUser({ openModal, closeModal }) {
   return (
     <>
-      <div className="flex flex-col bg-blue-1 p-5 fixed inset-0 overflow-x-auto m-2">
-        <h2 className="text-white text-3xl pb-4">Añadir clase</h2>
+      <div className={`flex flex-col bg-blue-1 p-5 fixed inset-0 overflow-x-auto m-2 ${openModal ? "visible bg-black/20" : "invisible"}`} >
+        <section className="flex justify-between items-center">
+          <h2 className="text-white text-3xl pb-4">Añadir clase</h2>
+          <button className="self-start" onClick={closeModal}><FiX className="text-white cursor-pointer text-4xl hover:text-purple" /></button>
+        </section>
+        
         <hr />
         <div className="flex flex-col justify-center items-center pt-4 w-full ">
           <form
@@ -119,7 +124,9 @@ export default function ModalUser() {
             </div>
 
             <SubmitButton>Añadir</SubmitButton>
-            <Button>Cancelar</Button>
+            <Button
+              onClick={closeModal}
+            >Cancelar</Button>
           </form>
         </div>
       </div>

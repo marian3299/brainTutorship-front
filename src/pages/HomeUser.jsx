@@ -1,7 +1,15 @@
+import { useState } from "react";
 import HeaderUser from "../components/HeaderUser";
 import ModalUser from "../components/ModalUser";
 
 export default function HomeUser() {
+  
+  const [openModal, setOpenModal] = useState(false);  
+
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  }
+
   const data = [
     {
       fecha: "01/01/2021",
@@ -65,7 +73,9 @@ export default function HomeUser() {
   return (
     <>
       <div className="h-[100dvh] flex flex-col">
-        <HeaderUser />
+        <HeaderUser 
+          handleOpenModal={handleOpenModal}
+        />
         <div className=" bg-blue-1/90 h-dvh overflow-x-auto  px-10 relative " >
           <table className="w-[1178px]  border-collapse text-left text-white p-10 xl:w-full">
             <thead className="bg-blue-2 h-10">
@@ -123,7 +133,10 @@ export default function HomeUser() {
           </table>
         </div>
 
-        {/* <ModalUser /> */}
+        <ModalUser
+          openModal={openModal}
+          closeModal={handleOpenModal}
+        />
       </div>
     </>
   );
