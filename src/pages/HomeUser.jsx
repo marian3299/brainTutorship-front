@@ -123,7 +123,7 @@ export default function HomeUser() {
           </table>
         </div>
 
-        <ModalUser />
+        {/* <ModalUser /> */}
       </div>
     </>
   );
