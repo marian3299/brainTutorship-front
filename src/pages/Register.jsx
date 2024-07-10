@@ -7,11 +7,11 @@ export default function Register() {
       <h1 className="text-white text-4xl mb-12 font-bold">Crear cuenta</h1>
       <form action="">
         <div className="flex flex-col items-center justify-center gap-4">
-          <input type="text" placeholder="Nombre" className="input" />
-          <input type="text" placeholder="Apellido" className="input" />
-          <input type="text" placeholder="Correo" className="input" />
-          <input type="password" placeholder="Contraseña" className="input" />
-          <input type="password" placeholder="Repetir contraseña" className="input" />
+          <input type="text" placeholder="Nombre" className="input  w-80" />
+          <input type="text" placeholder="Apellido" className="input  w-80" />
+          <input type="text" placeholder="Correo" className="input  w-80" />
+          <input type="password" placeholder="Contraseña" className="input  w-80" />
+          <input type="password" placeholder="Repetir contraseña" className="input  w-80" />
           <SubmitButton>REGISTRARSE</SubmitButton>
         </div>
       </form>

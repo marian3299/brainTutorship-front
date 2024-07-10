@@ -8,8 +8,8 @@ export default function Login() {
       <h1 className="text-white text-4xl mb-12 font-bold">Iniciar sesión</h1>
       <form action="">
         <div className="flex flex-col gap-4 items-center justify-center">
-          <input type="text" placeholder="Correo" className="input" />
-          <input type="password" placeholder="Contraseña" className="input" />
+          <input type="text" placeholder="Correo" className="input  w-80" />
+          <input type="password" placeholder="Contraseña" className="input  w-80" />
           <SubmitButton>Iniciar sesión</SubmitButton>
         </div>
       </form>

@@ -4,7 +4,11 @@
 @tailwind utilities;
 
 .input {
-    @apply rounded-2xl border-2 border-solid border-purple bg-blue-1 p-2 placeholder-white w-80;
+    @apply rounded-2xl border-2 border-solid border-purple bg-blue-1 p-2 placeholder-white;
+}
+
+.input-modal{
+    @apply bg-grey;
 }
 
 
