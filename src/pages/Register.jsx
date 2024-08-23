@@ -8,10 +8,12 @@ export default function Register() {
     handleSubmit,
     formState: { errors },
     watch,
+    reset
   } = useForm();
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
+    reset();
   });
 
   console.log(errors);
