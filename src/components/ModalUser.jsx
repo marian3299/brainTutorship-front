@@ -1,70 +1,130 @@
 import { FiX } from "react-icons/fi";
 import SubmitButton from "../utils/SubmitButton";
 import Button from "../utils/Button";
+import { useForm } from "react-hook-form";
 
 export default function ModalUser({ openModal, closeModal }) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    reset();
+  });
+
   return (
     <>
-      <div className={`flex flex-col bg-blue-1 p-5 fixed inset-0 overflow-x-auto m-2 ${openModal ? "visible bg-black/20" : "invisible"}`} >
+      <div
+        className={`flex flex-col bg-blue-1 p-5 fixed inset-0 overflow-x-auto m-2 ${
+          openModal ? "visible bg-black/20" : "invisible"
+        }`}
+      >
         <section className="flex justify-between items-center">
           <h2 className="text-white text-3xl pb-4">Añadir clase</h2>
-          <button className="self-start" onClick={closeModal}><FiX className="text-white cursor-pointer text-4xl hover:text-purple" /></button>
+          <button className="self-start" onClick={closeModal}>
+            <FiX className="text-white cursor-pointer text-4xl hover:text-purple" />
+          </button>
         </section>
-        
+
         <hr />
         <div className="flex flex-col justify-center items-center pt-4 w-full ">
           <form
-            action=""
+            onSubmit={onSubmit}
+            noValidate
             className="flex flex-col gap-4 w-full lg:self-center lg:max-w-[600px]"
           >
             <div className="flex flex-col lg:flex-row text-white gap-4 lg:justify-between">
               <div className="flex flex-col gap-1 lg:flex-1">
+                {/* DATE */}
                 <label htmlFor="date">Fecha</label>
+                {errors.date && (
+                  <span className="text-red-600 font-semibold text-xs mb-1">
+                    *{errors.date.message}
+                  </span>
+                )}
                 <input
                   type="date"
                   className="input input-modal"
-                  name="date"
-                  id="date"
+                  {...register("date", {
+                    required: {
+                      value: true,
+                      message: "La fecha es obligatoria",
+                    },
+                  })}
                 />
               </div>
+
               <div className="flex flex-col gap-1 lg:flex-1">
-                <label htmlFor="day">Dia</label>
+                {/* DAY */}
+                <label htmlFor="day">Dia </label>
+                {errors.day && (
+                  <span className="text-red-600 font-semibold text-xs mb-1">
+                    *{errors.day.message}
+                  </span>
+                )}
                 <input
                   type="text"
-                  name="day"
-                  id="day"
                   className="input input-modal"
+                  {...register("day", {
+                    required: {
+                      value: true,
+                      message: "El dia es obligatorio",
+                    },
+                  })}
                 />
               </div>
             </div>
 
             <div className="flex flex-col lg:flex-row text-white gap-4 lg:justify-between">
               <div className="flex flex-col gap-1 lg:flex-1">
+                {/* HORA INICIO */}
                 <label htmlFor="hora_inicio">Hora inicio</label>
+                {errors.hora_inicio && (
+                  <span className="text-red-600 font-semibold text-xs mb-1">
+                    *{errors.hora_inicio.message}
+                  </span>
+                )}
                 <input
                   type="time"
-                  name="hora_inicio"
-                  id="hora_inicio"
                   className="input input-modal"
+                  {...register("hora_inicio", {
+                    required: {
+                      value: true,
+                      message: "La hora de inicio es obligatoria",
+                    },
+                  })}
                 />
               </div>
               <div className="flex flex-col gap-1 lg:flex-1">
+                {/* HORA FIN */}
                 <label htmlFor="hora_fin">Hora fin</label>
+                {errors.hora_fin && (
+                  <span className="text-red-600 font-semibold text-xs mb-1">
+                    *{errors.hora_fin.message}
+                  </span>
+                )}
                 <input
                   type="time"
-                  name="hora_fin"
-                  id="hora_fin"
                   className="input input-modal"
+                  {...register("hora_fin", {
+                    required: {
+                      value: true,
+                      message: "La hora fin es obligatoria",
+                    },
+                  })}
                 />
               </div>
             </div>
 
-            {/* <label>Total</label> Calcular total de horas aparte
-            <input type="number" name="" id="" className="input input-modal" /> */}
             <div className="flex flex-col lg:flex-row text-white gap-4 lg:justify-between">
               <div className="flex flex-col gap-1 lg:flex-1">
+                {/* ALUMNO */}
                 <label htmlFor="alumno">Alumno</label>
-                <select name="alumno" id="alumno" className="input input-modal">
+                <select className="input input-modal" {...register("alumno")}>
                   <option value="juanito">Juanito</option>
                   <option value="mariana">Mariana</option>
                   <option value="pedro">Pedro</option>
@@ -72,25 +132,46 @@ export default function ModalUser({ openModal, closeModal }) {
               </div>
 
               <div className="flex flex-col gap-1 lg:flex-1">
+                {/* APOYO GAS */}
                 <label htmlFor="apoyo_gas">Apoyo gas</label>
+                {errors.apoyo_gas && (
+                  <span className="text-red-600 font-semibold text-xs mb-1">
+                    *{errors.apoyo_gas.message}
+                  </span>
+                )}
                 <input
                   type="number"
-                  name="apoyo_gas"
-                  id="apoyo_gas"
                   className="rounded-2xl border-2 border-solid border-purple bg-grey p-2 placeholder-white"
+                  {...register("apoyo_gas", {
+                    required: {
+                      value: true,
+                      message: "Campo obligatorio",
+                    },
+                  })}
                 />
               </div>
             </div>
 
             <div className="flex flex-col text-white">
+              {/* MODALIDAD */}
               <label>Modalidad</label>
+              {errors.modalidad && (
+                <span className="text-red-600 font-semibold text-xs mb-1">
+                  *{errors.modalidad.message}
+                </span>
+              )}
               <div className="flex gap-10">
                 <p>
                   <input
                     type="radio"
-                    name="modalidad"
                     id="presencial"
                     value="presencial"
+                    {...register("modalidad", {
+                      required: {
+                        value: true,
+                        message: "Campo obligatorio",
+                      },
+                    })}
                   />
                   <label htmlFor="presencial" className="pl-3">
                     Presencial
@@ -99,9 +180,14 @@ export default function ModalUser({ openModal, closeModal }) {
                 <p>
                   <input
                     type="radio"
-                    name="modalidad"
                     id="virtual"
                     value="virtual"
+                    {...register("modalidad", {
+                      required: {
+                        value: true,
+                        message: "Campo obligatorio",
+                      },
+                    })}
                   />
                   <label htmlFor="virtual" className="pl-3">
                     Virtual
@@ -111,22 +197,20 @@ export default function ModalUser({ openModal, closeModal }) {
             </div>
 
             <div className="flex flex-col gap-1 lg:flex-1">
+              {/* COMENTARIOS */}
               <label htmlFor="comentarios" className="text-white">
                 Comentarios
               </label>
               <textarea
-                name="comentarios"
-                id="comentarios"
                 cols="30"
                 rows="10"
                 className="input input-modal "
+                {...register("comentarios")}
               ></textarea>
             </div>
 
             <SubmitButton>Añadir</SubmitButton>
-            <Button
-              onClick={closeModal}
-            >Cancelar</Button>
+            <Button onClick={closeModal}>Cancelar</Button>
           </form>
         </div>
       </div>
