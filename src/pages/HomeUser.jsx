@@ -1,61 +1,14 @@
 import { useState } from "react";
 import HeaderUser from "../components/HeaderUser";
 import ModalUser from "../components/ModalUser";
+import { data } from "../utils/data";
 
 export default function HomeUser() {
-  
-  const [openModal, setOpenModal] = useState(false);  
+  const [openModal, setOpenModal] = useState(false);
 
   const handleOpenModal = () => {
     setOpenModal(!openModal);
-  }
-
-  const data = [
-    {
-      fecha: "01/01/2021",
-      dia: "Lunes",
-      horaInicio: "08:00",
-      horaFin: "09:00",
-      total: 1,
-      alumno: "Juanito Perez",
-      modalidad: "Presencial",
-      apoyoGas: "Si",
-      comentarios: "Ninguno",
-    },
-    {
-      fecha: "01/01/2021",
-      dia: "Lunes",
-      horaInicio: "09:00",
-      horaFin: "10:00",
-      total: 1,
-      alumno: "Mariana Alvarado González",
-      modalidad: "Presencial",
-      apoyoGas: "Si",
-      comentarios: "Ninguno",
-    },
-    {
-      fecha: "01/01/2021",
-      dia: "Lunes",
-      horaInicio: "10:00",
-      horaFin: "11:00",
-      total: 1,
-      alumno: "Juanito",
-      modalidad: "Presencial",
-      apoyoGas: "Si",
-      comentarios: "Ninguno",
-    },
-    {
-      fecha: "01/01/2021",
-      dia: "Lunes",
-      horaInicio: "10:00",
-      horaFin: "11:00",
-      total: 1,
-      alumno: "Juanito",
-      modalidad: "Presencial",
-      apoyoGas: "Si",
-      comentarios: "Ninguno",
-    },
-  ];
+  };
 
   const headers = [
     "Fecha",
@@ -73,10 +26,8 @@ export default function HomeUser() {
   return (
     <>
       <div className="h-[100dvh] flex flex-col">
-        <HeaderUser 
-          handleOpenModal={handleOpenModal}
-        />
-        <div className=" bg-blue-1/90 h-dvh overflow-x-auto  px-10 relative " >
+        <HeaderUser handleOpenModal={handleOpenModal} />
+        <div className=" bg-blue-1/90 h-dvh overflow-x-auto  px-10 relative ">
           <table className="w-[1178px]  border-collapse text-left text-white p-10 xl:w-full">
             <thead className="bg-blue-2 h-10">
               <tr>
@@ -133,10 +84,7 @@ export default function HomeUser() {
           </table>
         </div>
 
-        <ModalUser
-          openModal={openModal}
-          closeModal={handleOpenModal}
-        />
+        <ModalUser openModal={openModal} closeModal={handleOpenModal} />
       </div>
     </>
   );

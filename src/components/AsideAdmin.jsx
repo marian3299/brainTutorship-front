@@ -1,4 +1,3 @@
-import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import { PiStudent } from "react-icons/pi";
@@ -7,10 +6,7 @@ import { PiChalkboardTeacherLight } from "react-icons/pi";
 const AsideAdmin = () => {
   return (
     <>
-      <button className="lg:hidden">
-        <AiOutlineMenu />
-      </button>
-      <aside className="fixed top-0 left-0 w-64 h-screen hidden lg:block">
+      <aside className="fixed top-0 left-0 w-52 h-screen hidden lg:block">
         <div className="h-full px-3 py-4 overflow-y-auto bg-blue-1">
           <h3 className="text-white mb-2 p-2 text-xl">BrainTutorship</h3>
           <ul className="text-white">
