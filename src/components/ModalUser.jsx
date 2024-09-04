@@ -19,7 +19,7 @@ export default function ModalUser({ openModal, closeModal }) {
   return (
     <>
       <div
-        className={`flex flex-col bg-blue-1 p-5 fixed inset-0 overflow-x-auto m-2 ${
+        className={`flex flex-col bg-blue-1 p-5  fixed inset-0 overflow-x-auto  ${
           openModal ? "visible bg-black/20" : "invisible"
         }`}
       >
