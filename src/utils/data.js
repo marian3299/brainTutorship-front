@@ -300,4 +300,122 @@ const clasesData = [
   },
 ];
 
-export { data, clasesData };
+const maestrosData = [
+  {
+    name: "Mariana Ampudia",
+    clases: [
+      {
+        id: 234321,
+        fecha: "12/08/2024",
+        alumno: "Andres Cardenas",
+        clase: "Matematicas",
+        horas: 2,
+        modalidad: "Presencial",
+        apoyoGas: 100,
+      },
+      {
+        id: 83831,
+        fecha: "10/04/2024",
+        alumno: "Patricia Pech",
+        clase: "Español",
+        horas: 1,
+        modalidad: "Presencial",
+        apoyoGas: 0,
+      },
+    ],
+  },
+  {
+    name: "Ana Lopez",
+    clases: [
+      {
+        id: 564321,
+        fecha: "05/08/2024",
+        alumno: "Juan Hernandez",
+        clase: "Ciencias",
+        horas: 2.5,
+        modalidad: "En línea",
+        apoyoGas: 0,
+      },
+      {
+        id: 93831,
+        fecha: "15/07/2024",
+        alumno: "Luisa Torres",
+        clase: "Ingles",
+        horas: 1.5,
+        modalidad: "Presencial",
+        apoyoGas: 50,
+      },
+    ],
+  },
+  {
+    name: "Claudia Fernandez",
+    clases: [
+      {
+        id: 334721,
+        fecha: "20/06/2024",
+        alumno: "Santiago Garcia",
+        clase: "Historia",
+        horas: 1,
+        modalidad: "En línea",
+        apoyoGas: 0,
+      },
+      {
+        id: 27831,
+        fecha: "28/05/2024",
+        alumno: "Valeria Martinez",
+        clase: "Arte",
+        horas: 2,
+        modalidad: "Presencial",
+        apoyoGas: 120,
+      },
+    ],
+  },
+  {
+    name: "Laura Perez",
+    clases: [
+      {
+        id: 987321,
+        fecha: "02/07/2024",
+        alumno: "Manuel Ortiz",
+        clase: "Geografía",
+        horas: 1.5,
+        modalidad: "Presencial",
+        apoyoGas: 70,
+      },
+      {
+        id: 47831,
+        fecha: "18/06/2024",
+        alumno: "Juliana Castro",
+        clase: "Biología",
+        horas: 2.5,
+        modalidad: "En línea",
+        apoyoGas: 0,
+      },
+    ],
+  },
+  {
+    name: "Laura Perez",
+    clases: [
+      {
+        id: 987321,
+        fecha: "02/07/2024",
+        alumno: "Manuel Ortiz",
+        clase: "Geografía",
+        horas: 1.5,
+        modalidad: "Presencial",
+        apoyoGas: 70,
+      },
+      {
+        id: 47831,
+        fecha: "18/06/2024",
+        alumno: "Juliana Castro",
+        clase: "Biología",
+        horas: 2.5,
+        modalidad: "En línea",
+        apoyoGas: 0,
+      },
+    ],
+  },
+];
+
+export { data, clasesData, maestrosData };

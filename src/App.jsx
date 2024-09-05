@@ -6,6 +6,7 @@ import HomeAdmin from "./pages/HomeAdmin";
 import AdminClases from "./pages/AdminClases";
 import AdminAlumnos from "./pages/AdminAlumnos";
 import AdminMaestros from "./pages/AdminMaestros";
+import TableMaestros from "./components/TableMaestros";
 
 function App() {
   const BrowserRouter = createBrowserRouter([
@@ -19,6 +20,7 @@ function App() {
         { path: "clases", element: <AdminClases /> },
         { path: "maestros", element: <AdminMaestros /> },
         { path: "alumnos", element: <AdminAlumnos /> },
+        { path: "maestros/id", element: <TableMaestros /> },
       ],
     },
   ]);

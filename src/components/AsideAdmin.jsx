@@ -16,7 +16,7 @@ const AsideAdmin = ({ asideOpen, handleAsideOpen, closeAside }) => {
           <div className="flex items-center mb-2 p-2">
             <h3 className="text-white  text-xl">BrainTutorship</h3>
             <button onClick={handleAsideOpen}>
-              <IoClose className="text-white text-3xl ml-2" />
+              <IoClose className="text-white text-3xl ml-2 lg:hidden" />
             </button>
           </div>
 
