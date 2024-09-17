@@ -418,4 +418,57 @@ const maestrosData = [
   },
 ];
 
-export { data, clasesData, maestrosData };
+const alumnosData = [
+  {
+    name: "Mara Vazquez",
+    clases: {
+      fecha: "1/01/2024",
+      clase: "Matematicas",
+      maestro: "Mariana Ampudia",
+      horas: 1,
+      modalidad: "Presencial",
+    },
+  },
+  {
+    name: "Carlos Gómez",
+    clases: {
+      fecha: "5/02/2024",
+      clase: "Física",
+      maestro: "Juan Pérez",
+      horas: 2,
+      modalidad: "Online",
+    },
+  },
+  {
+    name: "Lucía Fernández",
+    clases: {
+      fecha: "10/03/2024",
+      clase: "Química",
+      maestro: "Ana García",
+      horas: 1.5,
+      modalidad: "Presencial",
+    },
+  },
+  {
+    name: "Pedro Sánchez",
+    clases: {
+      fecha: "20/04/2024",
+      clase: "Historia",
+      maestro: "Ricardo Méndez",
+      horas: 2,
+      modalidad: "Online",
+    },
+  },
+  {
+    name: "Sofía Martínez",
+    clases: {
+      fecha: "25/05/2024",
+      clase: "Inglés",
+      maestro: "Laura Rodríguez",
+      horas: 1,
+      modalidad: "Presencial",
+    },
+  },
+];
+
+export { data, clasesData, maestrosData, alumnosData };
